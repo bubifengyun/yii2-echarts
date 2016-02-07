@@ -1,0 +1,21 @@
+{
+    "name": "bubifengyun/yii2-echarts",
+    "description": "baidu echarts for yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","echarts"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "bubifengyun",
+            "email": "bubifengyun@sina.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "bubifengyun\\echarts\\": ""
+        }
+    }
+}
