@@ -2,18 +2,17 @@
 
 namespace bubifengyun\echarts;
 
-class ECharts extends Hisune\EchartsPHP\ECharts
+use Hisune\EchartsPHP\ECharts as EchartsPHP;
+use bubifengyun\echarts\EChartsAsset;
+
+class ECharts extends EchartsPHP
 {
     /**
      * @param $view string, dist of libraries
      */
-    public function __construct($view = '')
+    public function __construct($view)
     {
-        if ($view == '') {
-            $asset = EchartsAsset::register($view);
-            self::parent($asset->baseUrl);
-        } else {
-            self::parent($view);
-        }
+        $asset = EchartsAsset::register($view);
+        parent::__construct($asset->baseUrl);
     }
 }

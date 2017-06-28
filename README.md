@@ -43,7 +43,7 @@ Once the extension is installed, simply use it in your code by  :
 
 use bubifengyun\echarts\ECharts;
 
-$chart = new ECharts();
+$chart = new ECharts($this);
 $chart->tooltip->show = true;
 $chart->legend->data = array('销量');
 $chart->xAxis = array(
@@ -65,3 +65,19 @@ $chart->series = array(
 echo $chart->render('simple-custom-id');
 
 ```
+
+Ref
+-----
+参考
+-----
+
++ http://www.yiichina.com/tutorial/503
++ https://github.com/hisune/Echarts-PHP
++ https://github.com/ecomfe/echarts
+
+License
+-------
+许可证
+-----
+
+BSD and MIT 
