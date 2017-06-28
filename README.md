@@ -1,12 +1,15 @@
 Easy use echarts in yii2 when offline.
 ======================================
-Using hisune\echarts-php and bower-asset\echarts, complete it.
+Yii2 离线使用百度 echarts
+======================================
+
 使用 `hisune\echarts-php` 和 `bower-asset\echarts`，这样代码安装完成后，可以离线使用，不用每次都要联网去查百度的echarts。
 但是安装会比较慢，请慢慢等待。
-本代码最初实现在[yiichina](http://www.yiichina.com/tutorial/503)，曾提议改成单独的形式，遂有了本代码。功能完全等同于 `hisune\echarts-php`，唯独不用使用的时候不用联网找百度echarts。
-详细使用方法参考:https://github.com/hisune/Echarts-PHP
+本代码最初实现在[yiichina](http://www.yiichina.com/tutorial/503)，曾提议改成单独的形式，遂有了本代码。功能是 `hisune\echarts-php` 的部分实现，唯独使用时不用联网找百度echarts。
 
 Installation
+------------
+安装
 ------------
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
@@ -14,7 +17,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist bubifengyun/yii2-echarts "*"
+php composer.phar require bubifengyun/yii2-echarts "*"
 ```
 
 or add
@@ -27,6 +30,8 @@ to the require section of your `composer.json` file.
 
 
 Usage
+-----
+用法
 -----
 
 详细使用方法参考: https://github.com/hisune/Echarts-PHP 。不同之处在于本文只实现了其 `ECharts` 部分。使用的类名字可能需要做修改。
