@@ -1,0 +1,23 @@
+{
+    "name": "bubifengyun/yii2-echarts",
+    "description": "Using hisune/echarts-php and bower-asset/echarts, complete it.",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","echarts"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "bubifengyun",
+            "email": "bubifengyun@sina.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "bower-asset/echarts": "*",
+        "hisune/echarts-php": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "bubifengyun\\echarts\\": ""
+        }
+    }
+}
