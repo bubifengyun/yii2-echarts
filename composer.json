@@ -15,6 +15,12 @@
         "bower-asset/echarts": "*",
         "hisune/echarts-php": "^1.0"
     },
+    "repositories":[
+        {
+            "type": "git",
+            "url": "https://github.com/bubifengyun/yii2-echarts"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "bubifengyun\\echarts\\": ""
