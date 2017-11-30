@@ -6,10 +6,13 @@ use yii\web\AssetBundle;
 
 class EchartsAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/echarts/dist';
+    public $sourcePath = '@bower/echarts';
     public $js = [
-        'echarts.min.js',
-        './extension/dataTool.min.js',
-        './extension/bmap.min.js',
+        './dist/echarts.min.js',
+        './dist/extension/dataTool.min.js',
+        './map/js/china.js',
+        './map/js/china-contour.js',
+        './map/js/world.js',
+        './map/js/province/*.js',
     ];
 }
