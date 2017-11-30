@@ -9,8 +9,6 @@ class EchartsAsset extends AssetBundle
     public $sourcePath = '@bower/echarts/dist';
     public $js = [
         'echarts.min.js',
-        'echarts.common.min.js',
-        'echarts.simple.min.js',
         './extension/dataTool.min.js',
         './extension/bmap.min.js',
     ];
