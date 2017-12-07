@@ -13,6 +13,5 @@ class EchartsAsset extends AssetBundle
         './map/js/china.js',
         './map/js/china-contour.js',
         './map/js/world.js',
-        './map/js/province/*.js',
     ];
 }
