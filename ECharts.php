@@ -16,10 +16,17 @@ class ECharts extends EchartsPHP
     /**
      * @param $view string, dist of libraries
      */
-    public function __construct($view)
+    public function __construct($view, $map = null)
     {
         $asset = EchartsAsset::register($view);
         parent::__construct($asset->baseUrl);
+        if (is_array($map)) {
+            $mapAsset = MapAsset::register($view);
+            $mapUrl = $mapAsset->baseUrl;
+            foreach ($map as $part) {
+                Config::addExtraScript($part, $mapUrl);
+            }
+        }
     }
 
     public function render($id, $attribute = array(), $theme = null)
