@@ -3,10 +3,12 @@
 namespace bubifengyun\echarts;
 
 use Hisune\EchartsPHP\ECharts as EchartsPHP;
+use Hisune\EchartsPHP\Config;;
 use Hisune\EchartsPHP\Doc\IDE\Series;
 use Hisune\EchartsPHP\Doc\IDE\XAxis;
 use Hisune\EchartsPHP\Doc\IDE\YAxis;
 use bubifengyun\echarts\EChartsAsset;
+use bubifengyun\echarts\MapAsset;
 
 class ECharts extends EchartsPHP
 {

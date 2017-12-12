@@ -65,6 +65,129 @@ $chart->series = array(
 echo $chart->render('simple-custom-id');
 ```
 
+画个世界地图
+
+```php
+
+use Hisune\EchartsPHP\Doc\IDE\Series;
+use bubifengyun\echarts\ECharts;
+
+// $this 传递 echarts.min.js 的位置， 后面
+// 数组 world.js 传递的是 world.js 的位置
+// 为了显示 中国的地图，用 ['china.js']
+// 为了显示某个省份的地图，用['province/anhui.js']
+// 同时，对应的 $series->map 也要修改。
+$chart = new ECharts($this, ['world.js']);
+$chart->visualMap->min = 0;
+$chart->visualMap->max = 100;
+$chart->visualMap->text = ['High', 'Low'];
+$chart->visualMap->calculable = true;
+$chart->visualMap->inRange->color = ['#C843C8', '#441744'];
+$chart->tooltip->trigger = 'item';
+$chart->tooltip->formatter = '{a}<br>{b}  {c}';
+$series = new Series();
+$series->name = 'Times';
+$series->type = 'map';
+$series->map = 'world';
+// echart默认是用不规范的英文国家名做映射关系，这里转为标准的ISO3166-1国家短码
+$series->nameMap = \Hisune\EchartsPHP\Countries::nameMap();
+// 在data中使用ISO3166-1国家短码
+$series->data = [
+    [
+        'name' => 'CN',
+        'value' => 100,
+    ],
+    [
+        'name' => 'US',
+        'value' => 50,
+    ],
+    [
+        'name' => 'RU',
+        'value' => 80,
+    ],
+    [
+        'name' => 'IN',
+        'value' => 20,
+    ],
+    [
+        'name' => 'CA',
+        'value' => 80,
+    ],
+    [
+        'name' => 'AU',
+        'value' => 30,
+    ]
+];
+$series->label->emphasis->show = false;
+$series->label->emphasis->textStyle->color = '#fff';
+$series->roam = true;
+$series->scaleLimit->min = 1;
+$series->scaleLimit->max = 5;
+$series->itemStyle->normal->borderColor = '#bbb';
+$series->itemStyle->normal->areaColor = '#F5F6FA';
+$series->itemStyle->emphasis->areaColor = '#441744';
+$chart->addSeries($series);
+echo $chart->render('map', ['style' => 'height: 500px;']);
+
+```
+
+画个中国地图
+
+```php
+use Hisune\EchartsPHP\Doc\IDE\Series;
+use bubifengyun\echarts\ECharts;
+
+
+
+$chart = new ECharts($this, ['china.js']);
+$chart->visualMap->min = 0;
+$chart->visualMap->max = 100;
+$chart->visualMap->text = ['高', '低'];
+$chart->visualMap->calculable = true;
+$chart->visualMap->inRange->color = ['#C843C8', '#441744'];
+$chart->tooltip->trigger = 'item';
+$chart->tooltip->formatter = '{a}<br>{b}  {c}';
+$series = new Series();
+$series->name = '人员数目';
+$series->type = 'map';
+$series->map = 'china';
+$series->data = [
+    [
+        'name' => '安徽',
+        'value' => 100,
+    ],
+    [
+        'name' => '北京',
+        'value' => 50,
+    ],
+    [
+        'name' => '四川',
+        'value' => 80,
+    ],
+    [
+        'name' => '湖北',
+        'value' => 20,
+    ],
+    [
+        'name' => '上海',
+        'value' => 80,
+    ],
+];
+$series->label->emphasis->show = false;
+$series->label->emphasis->textStyle->color = '#fff';
+$series->roam = true;
+$series->scaleLimit->min = 1;
+$series->scaleLimit->max = 5;
+$series->itemStyle->normal->borderColor = '#bbb';
+$series->itemStyle->normal->areaColor = '#F5F6FA';
+$series->itemStyle->emphasis->areaColor = '#441744';
+$chart->addSeries($series);
+echo $chart->render('map', ['style' => 'height: 500px;']);
+
+```
+
+省份的地图不会画。
+
 
 Ref
 -----
