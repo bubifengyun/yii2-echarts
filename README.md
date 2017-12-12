@@ -17,13 +17,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require bubifengyun/yii2-echarts "*"
+php composer.phar require bubifengyun/yii2-echarts "@dev"
 ```
 
 or add
 
 ```
-"bubifengyun/yii2-echarts": "*"
+"bubifengyun/yii2-echarts": "@dev"
 ```
 
 to the require section of your `composer.json` file.
@@ -63,8 +63,8 @@ $chart->series = array(
     )
 );
 echo $chart->render('simple-custom-id');
-
 ```
+
 
 Ref
 -----
